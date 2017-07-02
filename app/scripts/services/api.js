@@ -81,6 +81,17 @@ angular.module('whatamessengerApp')
             roomKey: opts.roomKey
           }
         });
+      },
+      sendMessage: function (opts) {
+        return makeRequest({
+          url: apiServer + '/messages',
+          method: 'POST',
+          data: {
+            roomKey: opts.roomKey,
+            message: opts.message,
+            color: opts.color
+          }
+        });
       }
     };
   });

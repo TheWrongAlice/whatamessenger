@@ -34,12 +34,7 @@ angular
       .state('room', {
         url : '/{roomKey}',
         templateUrl: '/views/room.html',
-        controller: 'RoomCtrl',
-        resolve: {
-          messages: function($stateParams, api) {
-            return api.getMessages({roomKey: $stateParams.roomKey});
-          }
-        }
+        controller: 'RoomCtrl'
       });
   })
   .run(function($rootScope, $log, $state) {
