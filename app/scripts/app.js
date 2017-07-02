@@ -27,10 +27,17 @@ angular
       .state('main', {
         url : '/',
         templateUrl: '/views/main.html',
-        controller: 'MainCtrl',
+        controller: 'MainCtrl'
+      })
+
+      // Room state
+      .state('room', {
+        url : '/{roomKey}',
+        templateUrl: '/views/room.html',
+        controller: 'RoomCtrl',
         resolve: {
-          messages: function(api) {
-            return {messages: 'boop'};
+          messages: function($stateParams, api) {
+            return api.getMessages({roomKey: $stateParams.roomKey});
           }
         }
       });

@@ -8,6 +8,6 @@
  * Controller of the whatamessengerApp
  */
 angular.module('whatamessengerApp')
-  .controller('MainCtrl', function ($scope, $log, messages) {
-    $scope.messages = messages;
+  .controller('MainCtrl', function () {
+
   });

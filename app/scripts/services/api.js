@@ -73,10 +73,13 @@ angular.module('whatamessengerApp')
 
     // Public API here
     return {
-      getMessages: function () {
+      getMessages: function (opts) {
         return makeRequest({
           url: apiServer + '/messages',
-          method: 'GET'
+          method: 'GET',
+          params: {
+            roomKey: opts.roomKey
+          }
         });
       }
     };
