@@ -67,6 +67,6 @@ angular.module('whatamessengerApp')
     // Refresh messages every second
     loadMessages();
     $interval(function() {
-      //loadMessages();
+      loadMessages();
     }, 1000);
   });
