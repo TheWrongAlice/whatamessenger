@@ -11,9 +11,17 @@
 angular
   .module('whatamessengerApp', [
     'ngSanitize',
-    'ui.router'
+    'ui.router',
+    'ngMaterial',
+    'luegg.directives',
+    'ngCookies'
   ])
   .config(function($stateProvider, $urlRouterProvider) {
+
+    // Configure location provider
+    //$locationProvider.hashPrefix('!');
+    //$locationProvider.html5Mode(true);
+
     // Routing logic
     $urlRouterProvider
 

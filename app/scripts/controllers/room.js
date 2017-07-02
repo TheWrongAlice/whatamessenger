@@ -8,8 +8,27 @@
  * Controller of the whatamessengerApp
  */
 angular.module('whatamessengerApp')
-  .controller('RoomCtrl', function ($scope, $state, $stateParams, $interval, api) {
+  .controller('RoomCtrl', function ($scope, $state, $stateParams, $interval, $cookies, api) {
 
+    function getRandomColor() {
+      var letters = '456789'.split('');
+      var color = '#';
+      for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * letters.length)];
+      }
+      return color;
+    }
+
+    var cookieColor = $cookies.get('myColor');
+    if (cookieColor) {
+      $scope.myColor = cookieColor;
+    }
+    else {
+      $scope.myColor = getRandomColor();
+      $cookies.put('myColor', $scope.myColor);
+    }
+
+    $scope.roomKey = $stateParams.roomKey;
     $scope.messages = [];
     $scope.messageInput = '';
 
@@ -20,7 +39,7 @@ angular.module('whatamessengerApp')
       var newMessage = {
         roomKey: $stateParams.roomKey,
         message: angular.copy($scope.messageInput),
-        color: '#ffffff'
+        color: $scope.myColor
       };
 
       // Append to displayed messages
@@ -46,7 +65,8 @@ angular.module('whatamessengerApp')
     }
 
     // Refresh messages every second
+    loadMessages();
     $interval(function() {
-      loadMessages();
+      //loadMessages();
     }, 1000);
   });

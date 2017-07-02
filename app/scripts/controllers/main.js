@@ -8,6 +8,6 @@
  * Controller of the whatamessengerApp
  */
 angular.module('whatamessengerApp')
-  .controller('MainCtrl', function () {
-
+  .controller('MainCtrl', function ($state) {
+    $state.go('room', {roomKey: 'test'});
   });

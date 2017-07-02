@@ -1,9 +1,38 @@
-<div>
-  <div ng-repeat="message in messages">
-    <span ng-bind="::message.message"></span>
-  </div>
-</div>
+<div layout="column" layout-fill>
 
-<form ng-submit="sendMessage()">
-  <input ng-model="messageInput">
-</form>
+  <header>
+    <md-toolbar md-whiteframe="2" class="md-menu-toolbar">
+      <div layout="row" layout-align="center center" flex>
+        <h2 class="md-toolbar-tools">whatamessenger.io/{{roomKey}}</h2>
+      </div>
+    </md-toolbar>
+  </header>
+
+  <main flex class="main" scroll-glue>
+    <ul layout-padding>
+      <li ng-repeat="message in messages" class="message-wrapper" ng-class="{'me': message.color === myColor, 'them': message.color !== myColor}">
+        <div class="circle-wrapper animated bounceIn" ng-style="{'background-color': message.color}"></div>
+        <div class="text-wrapper animated fadeIn" ng-style="{'background-color': message.color}">
+          <div class="triangle" ng-style="{'border-right-color': message.color !== myColor && message.color, 'border-top-color': message.color === myColor && message.color}"></div>
+          <span ng-bind="::message.message"></span>
+        </div>
+      </li>
+    </ul>
+  </main>
+
+  <footer>
+    <md-toolbar md-whiteframe="4" class="md-menu-toolbar">
+      <md-content layout-padding>
+        <div layout="row" flex>
+          <form ng-submit="sendMessage()" class="width-1">
+            <md-input-container md-no-float class="md-block">
+              <input ng-model="messageInput" placeholder="Type your message here">
+              <div class="hint">Press enter to send</div>
+            </md-input-container>
+          </form>
+        </div>
+      </md-content>
+    </md-toolbar>
+  </footer>
+
+</div>
