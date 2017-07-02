@@ -11,8 +11,8 @@
   <main flex class="main" scroll-glue>
     <ul layout-padding>
       <li ng-repeat="message in messages" class="message-wrapper" ng-class="{'me': message.color === myColor, 'them': message.color !== myColor}">
-        <div class="circle-wrapper animated bounceIn" ng-style="{'background-color': message.color}"></div>
-        <div class="text-wrapper animated fadeIn" ng-style="{'background-color': message.color}">
+        <div class="circle-wrapper" ng-style="{'background-color': message.color}"></div>
+        <div class="text-wrapper" ng-style="{'background-color': message.color}">
           <div class="triangle" ng-style="{'border-right-color': message.color !== myColor && message.color, 'border-top-color': message.color === myColor && message.color}"></div>
           <span ng-bind="::message.message"></span>
         </div>
