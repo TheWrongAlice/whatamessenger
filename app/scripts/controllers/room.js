@@ -65,7 +65,7 @@ angular.module('whatamessengerApp')
     // Function for refreshing room messages
     function loadMessages() {
       api.getMessages({roomKey: $stateParams.roomKey}).then(function(response) {
-        if (!$scope.sending) {
+        if (!$scope.sending && $scope.messages.length !== response.message.length) {
           $scope.messages = response.messages;
         }
       });
