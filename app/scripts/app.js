@@ -14,7 +14,8 @@ angular
     'ui.router',
     'ngMaterial',
     'luegg.directives',
-    'ngCookies'
+    'ngCookies',
+    'ngclipboard'
   ])
   .config(function($stateProvider, $urlRouterProvider) {
 

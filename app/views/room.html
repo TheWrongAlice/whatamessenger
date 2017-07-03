@@ -1,11 +1,12 @@
 <div layout="column" layout-fill>
 
   <header>
-    <md-toolbar md-whiteframe="2" class="md-menu-toolbar">
+    <div md-whiteframe="2">
       <div layout="row" layout-align="center center" flex>
         <h2 class="md-toolbar-tools">whatamessenger.io/{{roomKey}}</h2>
+        <md-button ngclipboard data-clipboard-text="{{link}}" class="md-primary md-raised md-hue-1">Copy link</md-button>
       </div>
-    </md-toolbar>
+    </div>
   </header>
 
   <main flex class="main" scroll-glue>

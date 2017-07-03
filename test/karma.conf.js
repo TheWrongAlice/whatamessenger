@@ -31,6 +31,8 @@ module.exports = function(config) {
       'bower_components/angular-touch/angular-touch.js',
       'bower_components/angular-scroll-glue/src/scrollglue.js',
       'bower_components/angular-cookies/angular-cookies.js',
+      'bower_components/clipboard/dist/clipboard.js',
+      'bower_components/ngclipboard/dist/ngclipboard.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

@@ -10,6 +10,8 @@
 angular.module('whatamessengerApp')
   .controller('RoomCtrl', function ($scope, $state, $stateParams, $interval, $cookies, $window, api) {
 
+    $scope.link = 'http://whatamessenger.s3-website-us-east-1.amazonaws.com/#!/' + $stateParams.roomKey;
+
     function getRandomColor() {
       var letters = '456789'.split('');
       var color = '#';

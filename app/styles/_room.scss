@@ -10,9 +10,12 @@ $black: #333333;
 
 $navHeight: 64px;
 
+header {
+  background: white;
+}
+
 .main {
   overflow: auto;
-  background: rgb(245,245,245);
 }
 
 .message-wrapper {
