@@ -8,7 +8,7 @@
  * Controller of the whatamessengerApp
  */
 angular.module('whatamessengerApp')
-  .controller('RoomCtrl', function ($scope, $state, $stateParams, $interval, $cookies, api) {
+  .controller('RoomCtrl', function ($scope, $state, $stateParams, $interval, $cookies, $window, api) {
 
     function getRandomColor() {
       var letters = '456789'.split('');
@@ -53,6 +53,11 @@ angular.module('whatamessengerApp')
 
       // Reset input
       $scope.messageInput = '';
+    };
+
+    $scope.setFocus = function () {
+      var someElement = $window.document.getElementById('mi');
+      someElement.focus();
     };
 
     // Function for refreshing room messages

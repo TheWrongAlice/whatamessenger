@@ -12,6 +12,7 @@ $navHeight: 64px;
 
 .main {
   overflow: auto;
+  background: rgb(245,245,245);
 }
 
 .message-wrapper {
@@ -81,4 +82,11 @@ $navHeight: 64px;
       }
     }
   }
+}
+
+footer {
+  background: white;
+}
+.chat-input-container {
+  margin: 0;
 }

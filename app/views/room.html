@@ -21,18 +21,16 @@
   </main>
 
   <footer>
-    <md-toolbar md-whiteframe="4" class="md-menu-toolbar">
-      <md-content layout-padding>
-        <div layout="row" flex>
-          <form ng-submit="sendMessage()" class="width-1">
-            <md-input-container md-no-float class="md-block">
-              <input ng-model="messageInput" placeholder="Type your message here">
-              <div class="hint">Press enter to send</div>
-            </md-input-container>
-          </form>
-        </div>
-      </md-content>
-    </md-toolbar>
+    <div layout-padding md-whiteframe="2"> 
+      <div layout="row" flex>
+        <form ng-submit="sendMessage()" class="width-1">
+          <md-input-container md-no-float class="md-block chat-input-container">
+            <input ng-model="messageInput" id="mi" ng-init="setFocus()" placeholder="Type your message here">
+            <div class="hint">Press enter to send</div>
+          </md-input-container>
+        </form>
+      </div>
+    </div>
   </footer>
 
 </div>
