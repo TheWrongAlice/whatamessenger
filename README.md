@@ -22,7 +22,7 @@ bower install
 
 ## Build & development
 
-Run `grunt` for building and `grunt serve` for preview.
+Run `grunt build` for building and `grunt serve` for preview.
 
 You can deploy the project through the [AWS S3 Console](https://console.aws.amazon.com/s3/buckets/whatamessenger/?region=us-east-1&tab=overview).
 Upload all the contents of the _dist_ directory. Make sure to assign the proper file permissions (select everything and choose _make public_).
