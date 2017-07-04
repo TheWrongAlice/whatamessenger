@@ -1,1 +1,26 @@
-<p>This is the main view.</p>
+<div layout="row" layout-align="center center" class="height-1">
+	<md-whiteframe class="main-dialog md-whiteframe-1dp" layout layout-align="center center">
+		<div layout-padding>
+
+	  		<div layout="row" flex>
+	  			<h1 class="md-headline">Create a room link, start talking</h1>
+	  		</div>
+
+	      	<div layout="row" flex>
+		        <form ng-submit="goToRoom()" class="width-1" layout="row" layout-align="center start">
+		        	<div flex class="room-container-label">
+		        		whatamessenger.io/
+	   				</div>
+					<md-input-container flex md-no-float class="md-block room-container">
+						<input ng-model="roomInput" id="mi" ng-init="setFocus()" placeholder="my-chat-room">
+					</md-input-container>
+		        </form>
+	      	</div>
+
+	  		<div layout="row" flex layout-align="end end">
+	  			<md-button ng-click="goToRoom()" class="width-1 md-raised md-primary">Create new room</md-button>
+	  		</div>
+
+		</div>
+	</md-whiteframe>
+</div>
